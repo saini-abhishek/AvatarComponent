@@ -1,0 +1,46 @@
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Avatar from "@material-ui/core/Avatar";
+import Grid from "@material-ui/core/Grid";
+
+const useStyles = makeStyles({
+  smallAvatar: {
+    margin: 10
+  },
+  bigAvatar: {
+    margin: 10,
+    width: 60,
+    height: 60
+  },
+  circleAvatar: {
+    background: "linear-gradient(90deg, #D500F9 0%, #FF1744 100%)"
+  },
+  squareAvatar: {
+    backgroundColor: "#304FFE"
+  }
+});
+
+export default function ImageAvatar({
+  size,
+  variant,
+  imageUrl,
+  noImage,
+  ...props
+}) {
+  const classes = useStyles();
+
+  return (
+    <Grid container justify="center" alignItems="center">
+      <Avatar
+        className={`${classes[size]} ${
+          variant === "rounded" ? classes.squareAvatar : classes.circleAvatar
+        }`}
+        alt=""
+        src={imageUrl}
+        variant={variant}
+      >
+        {noImage}
+      </Avatar>
+    </Grid>
+  );
+}
