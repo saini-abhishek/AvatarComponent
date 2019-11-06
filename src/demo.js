@@ -34,12 +34,11 @@ export default function ImageAvatar({
   size,
   variant,
   imageUrl,
-  noImage,
-  isImageReadOnly,
+  userName,
+  onClick,
   ...props
 }) {
   const classes = useStyles();
-  console.log(isImageReadOnly);
 
   return (
     <Grid container justify="center" alignItems="center">
@@ -50,13 +49,14 @@ export default function ImageAvatar({
                     ? classes.squareAvatar
                     : classes.circleAvatar
                 }
-                ${!isImageReadOnly ? classes.avatarPointer : null}
+                ${onClick ? classes.avatarPointer : null}
                 `}
         alt=""
         src={imageUrl}
+        onClick={onClick}
         variant={variant}
       >
-        {noImage}
+        {userName}
       </Avatar>
     </Grid>
   );
