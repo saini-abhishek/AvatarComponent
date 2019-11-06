@@ -24,6 +24,9 @@ const useStyles = makeStyles({
   },
   squareAvatar: {
     backgroundColor: "#304FFE"
+  },
+  avatarPointer: {
+    cursor: "pointer"
   }
 });
 
@@ -32,16 +35,23 @@ export default function ImageAvatar({
   variant,
   imageUrl,
   noImage,
+  isImageReadOnly,
   ...props
 }) {
   const classes = useStyles();
+  console.log(isImageReadOnly);
 
   return (
     <Grid container justify="center" alignItems="center">
       <Avatar
-        className={`${classes.root} ${classes[size]} ${
-          variant === "rounded" ? classes.squareAvatar : classes.circleAvatar
-        }`}
+        className={`${classes.root} ${classes[size]} 
+                ${
+                  variant === "rounded"
+                    ? classes.squareAvatar
+                    : classes.circleAvatar
+                }
+                ${!isImageReadOnly ? classes.avatarPointer : null}
+                `}
         alt=""
         src={imageUrl}
         variant={variant}
