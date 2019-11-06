@@ -10,8 +10,11 @@ function App() {
   };
   return (
     <div>
-      <ImageAvatar size="smallAvatar" />
+      <ImageAvatar size="smallAvatar" userName="AB" />
+      <ImageAvatar size="smallAvatar" imageUrl={imageUrl} />
+      <ImageAvatar size="smallAvatar" imageUrl={imageUrl} variant="rounded" />
       <ImageAvatar size="bigAvatar" userName="AB" />
+      <ImageAvatar size="bigAvatar" />
       <ImageAvatar size="smallAvatar" variant="rounded" userName="AB" />
       <ImageAvatar size="bigAvatar" imageUrl={imageUrl} userName="AB" />
       <ImageAvatar size="bigAvatar" variant="rounded" />
