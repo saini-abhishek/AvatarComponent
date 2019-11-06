@@ -4,6 +4,13 @@ import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles({
+  root: {
+    fontFamily: "Roboto",
+    fontStyle: "normal",
+    fontWeight: "500",
+    fontSize: "20px",
+    lineHeight: "28px"
+  },
   smallAvatar: {
     margin: 10
   },
@@ -32,7 +39,7 @@ export default function ImageAvatar({
   return (
     <Grid container justify="center" alignItems="center">
       <Avatar
-        className={`${classes[size]} ${
+        className={`${classes.root} ${classes[size]} ${
           variant === "rounded" ? classes.squareAvatar : classes.circleAvatar
         }`}
         alt=""
